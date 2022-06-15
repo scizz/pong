@@ -9,14 +9,14 @@ function AI:load()
     self.y = love.graphics.getHeight() / 2
     self.yVel = 0
     self.speed = 500
-
     self.timer = 0
-    self.rate = 0.5
+    self.rate = 0
 end
 
 
 function AI:update(dt)
     self:move(dt)
+    self:checkBoundaries()
     self.timer = self.timer + dt
     if self.timer > self.rate then
         self.timer = 0
@@ -36,6 +36,14 @@ function AI:acquireTarget()
         self.yVel = self.speed
     else
         self.yVel = 0
+    end
+end
+
+function AI:checkBoundaries()
+    if self.y < 0 then
+        self.y = 0
+    elseif self.y + self.height > love.graphics.getHeight() then
+        self.y = love.graphics.getHeight() - self.height
     end
 end
 

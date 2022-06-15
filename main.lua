@@ -6,6 +6,8 @@ function love.load()
     Player:load()
     Ball:load()
     AI:load()
+
+    Score = {player = 0, ai = 0}
 end
 
 
@@ -20,6 +22,8 @@ function love.draw()
     Player:draw()
     Ball:draw()
     AI:draw()
+    love.graphics.print("Player: "..Score.player, 50, 50)
+    love.graphics.print("Opponent: "..Score.ai, 1000, 50)
 end
 
 function checkCollision(a, b)
