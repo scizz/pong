@@ -25,6 +25,7 @@ function Ball:collide()
     self:collidePlayer()
     self:collideAI()
     self:score()
+    self:level()
 end
 
 
@@ -77,6 +78,19 @@ function Ball:score()
     if self.x + self.width > love.graphics.getWidth() then
         self:resetPosition(-1)
         Score.player = Score.player +1
+    end
+end
+
+function Ball:level()
+    if Score.player == 5 then
+        Score.player = 0
+        Score.ai = 0
+        gamestate = "title"
+    end
+    if Score.ai == 5 then
+        Score.player = 0
+        Score.ai = 0
+        gamestate = "title"
     end
 end
 
