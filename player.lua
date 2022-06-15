@@ -17,9 +17,9 @@ end
 
 
 function Player:move(dt)
-    if love.keyboard.isDown("w") then
+    if love.keyboard.isDown("w", "up") then
         self.y = self.y - self.speed * dt
-    elseif love.keyboard.isDown("s") then
+    elseif love.keyboard.isDown("s", "down") then
         self.y = self.y + self.speed * dt
     end
 end

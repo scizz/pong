@@ -1,4 +1,5 @@
-
+require("player")
+require("ai")
 
 Ball = {}
 
@@ -85,12 +86,16 @@ function Ball:level()
     if Score.player == 5 then
         Score.player = 0
         Score.ai = 0
-        gamestate = "title"
+        gamestate = "win"
+        Player:load()
+        AI:load()
     end
     if Score.ai == 5 then
         Score.player = 0
         Score.ai = 0
-        gamestate = "title"
+        gamestate = "lose"
+        Player:load()
+        AI:load()
     end
 end
 
