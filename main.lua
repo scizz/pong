@@ -34,8 +34,10 @@ function love.draw()
         love.graphics.setFont(generalFontLarge)
         love.graphics.printf('PONG', 0, love.graphics.getHeight() / 2 - 90, love.graphics.getWidth(), 'center')
         love.graphics.setFont(generalFont)
-        love.graphics.printf('Press Space to Play', 0, love.graphics.getHeight() / 2 + 30, love.graphics.getWidth(), 'center')
         love.graphics.printf('Karl 2022', 0, love.graphics.getHeight() -50, love.graphics.getWidth(), 'center')
+        if math.floor(love.timer.getTime()) % 2 == 0 then
+        love.graphics.printf('Press Space to Play', 0, love.graphics.getHeight() / 2 + 30, love.graphics.getWidth(), 'center')
+        end
     else
     Player:draw()
     Ball:draw()
