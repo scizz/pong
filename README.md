@@ -1,6 +1,6 @@
 # Pong
 
-A classic Pong game built with Love2D and written in Lua
+Classic Pong game, written in Lua and built with LÖVE.
 
 ## About this project
 
